@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,400&display=swap");
+/*VARIABLES*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: inherit;
+  height: 100vh;
+  background: #cdcdcd;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.calendar {
+  max-width: 95vw;
+  width: 100%;
+  font-family: "Ubuntu", sans-serif;
+  background: #fff;
+  /*=============================HEADING CONFIG==============================*/
+  /*=============================BODY CONFIG==============================*/
+  /*=============================FOOTER CONFIG==============================*/
+}
+@media (min-width: 1280px) {
+  .calendar {
+    max-width: 75rem;
+  }
+}
+.calendar__header {
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .calendar__header {
+    padding: 1.25rem 2.5rem;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+.calendar__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .calendar__title {
+    font-size: 2.25rem;
+  }
+}
+.calendar__price {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .calendar__price {
+    margin-left: 1.5rem;
+    margin-top: 0;
+  }
+}
+.calendar__price span:nth-child(1) {
+  color: #02a7fc;
+  font-size: 1rem;
+  transform: translateY(-40%);
+  margin-right: 0.5rem;
+}
+@media (min-width: 768px) {
+  .calendar__price span:nth-child(1) {
+    font-size: 1.2rem;
+  }
+}
+.calendar__price span:nth-child(2) {
+  color: #0073ae;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .calendar__price span:nth-child(2) {
+    font-size: 2rem;
+  }
+}
+.calendar__price span:nth-child(3) {
+  color: #0083c6;
+  font-size: 1rem;
+  transform: translateY(30%);
+}
+.calendar__body {
+  padding: 1.25rem 1rem;
+}
+@media (min-width: 768px) {
+  .calendar__body {
+    padding: 1.25rem 2.5rem;
+  }
+}
+.calendar__footer {
+  background: #0083c6;
+  color: #fff;
+  padding: 1.25rem 1rem;
+}
+@media (min-width: 768px) {
+  .calendar__footer {
+    padding: 1rem 2.5rem;
+  }
+}
+
+.checking {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background: #fff;
+  padding: 2px;
+  width: 100%;
+  max-width: 18.75rem;
+  border-radius: 8px;
+  /*====================================== DROPDOWN SETTINGS ======================================*/
+}
+.checking__container {
+  display: flex;
+}
+.checking__text {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.checking__date {
+  font-weight: 500;
+}
+.checking__selected {
+  display: flex;
+  background: #0073ae;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.checking__options {
+  background: #fff;
+  color: #6a7883;
+}
+.checking__title {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+.checking__list {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0 1rem 0 0.5rem;
+}
+.checking__item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+.checking__item:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+.checking__item:hover {
+  background: #8cc7e5;
+}
+.checking__item--head {
+  padding: 0;
+  cursor: auto;
+}
+.checking__item--head:hover {
+  background: none;
+}
+.checking__cell-title {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+.checking__night {
+  text-align: right;
+}
+.checking__small {
+  font-size: 0.6rem;
+  display: block;
+}
+.checking__cell {
+  text-align: right;
+}
+.checking__total {
+  position: relative;
+}
+.checking__total:before {
+  content: "$";
+  font-size: 0.8rem;
+  display: inline-block;
+  transform: translateY(-25%);
+  color: currentColor;
+}
+.checking__total.discount-1 {
+  color: #53a237;
+}
+.checking__total.discount-2 {
+  color: #d29133;
+}
+
+.month {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .month:not(:last-child) {
+    border-right: 1px solid #d5dade;
+  }
+}
+.month__container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 992px) {
+  .month__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.month__header {
+  position: relative;
+  padding: 0 2.25rem 1.625rem;
+}
+.month__header:before {
+  content: "";
+  position: absolute;
+  width: 95%;
+  height: 1px;
+  background: #d5dade;
+  bottom: 0;
+  left: 2.5%;
+}
+.month__title {
+  color: #6a7883;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.month__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 1rem;
+  margin-top: 1.625rem;
+  padding: 0 1.5625rem;
+}
+.month__week {
+  text-align: center;
+  color: #6a7883;
+}
+.month__day {
+  position: relative;
+  text-align: center;
+  color: #6a7883;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  overflow: hidden;
+}
+.month__button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+}
+.month__button:focus {
+  outline: none;
+}
+.month__button.disabled {
+  color: #d5dade;
+  cursor: auto;
+}
+.month__button.active {
+  background: #8cc7e5;
+  font-weight: 700;
+}
+.month__button.first-active {
+  position: relative;
+  font-weight: 700;
+  padding: 0;
+  color: #fff;
+  border-radius: 50%;
+  background: #0083c6;
+  width: 1.875rem;
+  height: 1.875rem;
+}
+.month__button.first-active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: #8cc7e5;
+  z-index: -1;
+}
+.month__button.last-active {
+  position: relative;
+  font-weight: 700;
+  padding: 0;
+  color: #fff;
+  border-radius: 50%;
+  background: #0083c6;
+  width: 1.875rem;
+  height: 1.875rem;
+}
+.month__button.last-active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 100%;
+  height: 100%;
+  background: #8cc7e5;
+  z-index: -1;
+}
+.month--january .first-day {
+  grid-column-start: 4;
+}
+.month--february .first-day {
+  grid-column-start: 7;
+}
+.month--march .first-day {
+  grid-column-start: 7;
+}

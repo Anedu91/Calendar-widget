@@ -1,0 +1,75 @@
+.calendar{
+  max-width: 95vw;
+  width: 100%;
+  font-family: $calendar-font;
+  background: $white-color;
+  @media (min-width:1280px){
+    max-width: 75rem;
+  }
+  /*=============================HEADING CONFIG==============================*/
+  &__header{
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    @media (min-width:$sm){
+      padding: 1.25rem 2.5rem;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 1.5rem;
+    @media (min-width:$sm){
+      font-size: 2.25rem;
+    }
+  }
+  &__price{    
+    display: flex;
+    align-items: center;
+    margin-top: .5rem;
+    @media (min-width:$sm){
+      margin-left: 1.5rem;
+      margin-top: 0;
+    }
+    span:nth-child(1){
+      color: $principal-light-color;
+      font-size: 1rem;
+      transform: translateY(-40%);
+      margin-right: .5rem;
+      @media (min-width:$sm){
+        font-size: 1.2rem;
+      }
+    }
+    span:nth-child(2){
+      color: $principal-dark-color;
+      font-weight: 700;
+      font-size: 1.5rem;
+      @media (min-width:$sm){
+        font-size: 2rem;
+      }
+    }
+    span:nth-child(3){
+      color: $principal-color;
+      font-size: 1rem;
+      transform: translateY(30%);
+    }
+  }
+  /*=============================BODY CONFIG==============================*/
+  &__body{
+    padding: 1.25rem 1rem;
+    @media (min-width:$sm){
+      padding: 1.25rem 2.5rem;
+    }
+  }
+ 
+  /*=============================FOOTER CONFIG==============================*/
+  &__footer{
+    background: $principal-color;
+    color: $white-color;
+    padding: 1.25rem 1rem;
+    @media (min-width:$sm){
+      padding: 1rem 2.5rem;
+    }
+  }
+}
