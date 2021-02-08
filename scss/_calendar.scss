@@ -65,11 +65,37 @@
  
   /*=============================FOOTER CONFIG==============================*/
   &__footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: $principal-color;
     color: $white-color;
     padding: 1.25rem 1rem;
     @media (min-width:$sm){
       padding: 1rem 2.5rem;
     }
+  }
+  &__button{
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: $principal-darker-color;
+    background-color: $principal-light-color;
+    border: 2px solid $white-color;
+    padding: .5rem .75rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    &:focus{
+      outline: none;
+    }
+  }
+  &__icon{
+    width: 2rem;
+    height: 2rem;
+    fill: $white-color;
+    margin-left: .5rem;
   }
 }

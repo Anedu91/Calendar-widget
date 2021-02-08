@@ -152,39 +152,41 @@
       </div>
     </div>
     <div class="calendar__footer">
-      <div class="checking__container">
+      <div class="checking">
         <p class="checking__text">
           check-in 
           <span class="checking__date">Fri 23 Jan</span>
         </p>
-        <div class="checking">
-          <div class="checking__selected">
-            <span>3</span> Nights <span>FROM $ <span>900</span></span> <span>(min stay)</span>
-          </div>
-          <div class="checking__options">
-            <h3 class="checking__title">Starting <span>Fri 23 Jan 2021</span></h3>
-            <ul class="checking__list">
-              <li class="checking__item checking__item--head">
-                <span></span>
-                <span class="checking__cell-title">From total</span>
-                <span class="checking__cell-title">Per night</span>
-              </li>
-              <li class="checking__item">
-                <span class="checking__night">3 Nights <span class="checking__small">(min stay)</span></span>
-                <span class="checking__cell"><span class="checking__total">900</span></span>
-                <span class="checking__cell"><span class="checking__total">300</span></span>
-              </li>
-              <li class="checking__item">
-                <span class="checking__night">4 Nights</span>
-                <span class="checking__cell"><span class="checking__total">1200</span></span>
-                <span class="checking__cell"><span class="checking__total discount-1">250</span></span>
-              </li>
-              <li class="checking__item">
-                <span class="checking__night">14 Nights</span>
-                <span class="checking__cell"><span class="checking__total">1200</span></span>
-                <span class="checking__cell"><span class="checking__total discount-2">200</span></span>
-              </li>
-            </ul>
+        <div class="checking__container">
+          <div class="checking__dropdown">
+            <div class="checking__selected">
+              <span class="checking__night">3 Nights</span><span class="checking__price-selected">FROM<span class="checking__total">900</span></span> <span class="checking__small">(min stay)</span>
+            </div>
+            <div class="checking__options none">
+              <h3 class="checking__title">Starting <span>Fri 23 Jan 2021</span></h3>
+              <ul class="checking__list">
+                <li class="checking__item checking__item--head">
+                  <span></span>
+                  <span class="checking__cell-title">From total</span>
+                  <span class="checking__cell-title">Per night</span>
+                </li>
+                <li class="checking__item">
+                  <span class="checking__night">3 Nights <span class="checking__small">(min stay)</span></span>
+                  <span class="checking__cell"><span class="checking__total">900</span></span>
+                  <span class="checking__cell"><span class="checking__total">300</span></span>
+                </li>
+                <li class="checking__item">
+                  <span class="checking__night">4 Nights</span>
+                  <span class="checking__cell"><span class="checking__total">1200</span></span>
+                  <span class="checking__cell"><span class="checking__total discount-1">250</span></span>
+                </li>
+                <li class="checking__item">
+                  <span class="checking__night">14 Nights</span>
+                  <span class="checking__cell"><span class="checking__total">1200</span></span>
+                  <span class="checking__cell"><span class="checking__total discount-2">200</span></span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <p class="checking__text">
@@ -192,7 +194,19 @@
           <span class="checking__date">Sun 25 Jan 2021</span>
         </p>
       </div>
+      <button class="calendar__button">
+        Choose guests & extras <span> <svg class="calendar__icon"><use xlink:href="sprite.svg#icon-arrow"></use></svg> </span>
+      </button>
     </div>
   </div>
+  <script>
+    $dropdownButton = document.querySelector(".checking__dropdown");
+    $checkingOptions = document.querySelector(".checking__options")
+
+    $dropdownButton.addEventListener("click", () => {
+      $checkingOptions.classList.toggle("none")
+
+    })
+  </script>
 </body>
 </html>

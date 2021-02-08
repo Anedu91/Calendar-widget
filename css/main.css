@@ -108,6 +108,9 @@ body {
   }
 }
 .calendar__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #0083c6;
   color: #fff;
   padding: 1.25rem 1rem;
@@ -117,19 +120,51 @@ body {
     padding: 1rem 2.5rem;
   }
 }
+.calendar__button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: #01537d;
+  background-color: #02a7fc;
+  border: 2px solid #fff;
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.calendar__button:focus {
+  outline: none;
+}
+.calendar__icon {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff;
+  margin-left: 0.5rem;
+}
 
 .checking {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  /*====================================== DROPDOWN SETTINGS ======================================*/
+}
+.checking__container {
+  position: relative;
+  min-width: 300px;
+  min-height: 42px;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+.checking__dropdown {
+  position: absolute;
   background: #fff;
   padding: 2px;
   width: 100%;
   max-width: 18.75rem;
   border-radius: 8px;
-  /*====================================== DROPDOWN SETTINGS ======================================*/
-}
-.checking__container {
-  display: flex;
+  cursor: pointer;
 }
 .checking__text {
   display: flex;
@@ -141,15 +176,45 @@ body {
   font-weight: 500;
 }
 .checking__selected {
+  position: relative;
   display: flex;
+  align-items: center;
   background: #0073ae;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 8px;
   cursor: pointer;
+}
+.checking__selected:before {
+  content: "";
+  position: absolute;
+  right: 0.5rem;
+  top: 35%;
+  width: 1rem;
+  height: 1rem;
+  background-image: url(../arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(90deg);
+}
+.checking__price-selected {
+  color: #8cc7e5;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.checking__price-selected .checking__total {
+  margin-left: 0.3rem;
+  font-size: 1rem;
 }
 .checking__options {
   background: #fff;
   color: #6a7883;
+}
+.checking__options.none {
+  display: none;
 }
 .checking__title {
   margin-top: 1rem;
