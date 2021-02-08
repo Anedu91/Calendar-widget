@@ -3,5 +3,11 @@
     <symbol id="icon-arrow" viewBox="0 0 24 24">
       <path d="M5.859 4.125l2.156-2.109 9.984 9.984-9.984 9.984-2.156-2.109 7.922-7.875z"></path>
     </symbol>
+    <symbol id="icon-add" viewBox="0 0 24 24">
+      <path d="M18.984 12.984h-6v6h-1.969v-6h-6v-1.969h6v-6h1.969v6h6v1.969z"></path>
+    </symbol>
+    <symbol id="icon-minus" viewBox="0 0 20 20">
+      <path d="M16 10c0 0.553-0.048 1-0.601 1h-10.798c-0.552 0-0.601-0.447-0.601-1s0.049-1 0.601-1h10.799c0.552 0 0.6 0.447 0.6 1z"></path>
+    </symbol>
   </defs>
 </svg>

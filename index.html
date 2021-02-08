@@ -222,11 +222,45 @@
         <div class="guest__group">
           <label for="adults" class="guest__label">Adults</label>
           <div class="guest__controler">
-            <button class="guest__button">-</button>
-            <button class="guest__button">+</button>
+            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-minus"></use></svg></button>
+            <span class="guest__total">2</span>
+            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-add"></use></svg></button>
             <input type="text" class="guest__input" id="adults">
-            
           </div>
+        </div>
+        <div class="guest__group">
+          <label for="children" class="guest__label">Children <span class="guest__info">Age 2-12</span></label>
+          <div class="guest__controler">
+            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-minus"></use></svg></button>
+            <span class="guest__total">1</span>
+            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-add"></use></svg></button>
+            <input type="text" class="guest__input" id="children">
+          </div>
+        </div>
+        <div class="guest__group">
+          <label for="infants" class="guest__label disabled">Infants <span class="guest__info">Under 2 yrs</span></label>
+          <div class="guest__controler">
+            <button class="guest__button disabled"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-minus"></use></svg></button>
+            <span class="guest__total disabled">0</span>
+            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-add"></use></svg></button>
+            <input type="text" class="guest__input" id="infants">
+          </div>
+        </div>
+        <div class="guest__group">
+          <h6 class="guest__label">Pets</h6>
+            <label for="pets" class="guest__controler guest__controler--label">
+              <input type="checkbox" name="" id="pets" class="guest__input">
+              <span class="guest__checkbox"></span>
+              <span class="guest__checkbox-info">Yes</span>
+            </label>
+        </div>
+        <div class="guest__group">
+          <h6 class="guest__label">Gym pass</h6>
+            <label for="gym" class="guest__controler guest__controler--label">
+              <input type="checkbox" name="" id="gym" class="guest__input">
+              <span class="guest__checkbox"></span>
+              <span class="guest__checkbox-info disabled">No</span>
+            </label>
         </div>
       </div>
     </div>

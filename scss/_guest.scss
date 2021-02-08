@@ -1,0 +1,98 @@
+.guest{  
+  &__group{
+    display: flex;
+    align-items: center;
+    color: $label-color;
+    margin-bottom: 1.15rem;
+    &:not(:last-child){
+    }
+
+  }
+  &__label{
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-width: 6.25rem;
+    &.disabled{
+      color: $disabled-color;
+    }
+  }
+  &__info{
+    display: block;
+    font-size: .7rem;
+    color: $disabled-color;
+  }
+  &__controler{
+    display: flex;
+    align-items: center;
+    &--label{
+      cursor: pointer;
+    }
+  }
+  &__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.125rem;
+    height: 2.125rem;
+    background: none;
+    border-radius: 50%;
+    font-weight: 300;
+    border: 2px solid currentColor;
+    cursor: pointer;
+    color: currentColor;
+    &:focus{
+      outline: none;
+    }
+    &.disabled{
+      color: $disabled-color;
+      cursor: auto;
+    }
+  }
+  &__icon{
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+  }
+  &__total{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 1.25rem;
+    &.disabled{
+      color: $disabled-color;
+    }
+  }
+  &__input{
+    display: none;
+  }
+  &__input:checked + &__checkbox{
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: transparent;
+      background-image: url(../Checkmark.svg);
+      background-size: 2.8rem;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      transform: translate(25%, -25%);
+    }
+  }
+  &__checkbox{
+    position: relative;
+    width: 1.725rem;
+    height: 1.725rem;
+    border: 2px solid $label-color;
+    border-radius: 8px;
+    background-color: $checkbox-color;
+    margin-right: 1rem;
+  }
+  &__checkbox-info{
+    font-size: 1.2rem;
+    font-weight: 700;
+    &.disabled{
+      color: $disabled-color;
+    }
+  }
+
+}
