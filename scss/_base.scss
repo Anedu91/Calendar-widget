@@ -26,11 +26,15 @@ html{
 }
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing: inherit;
-  height: 100vh;
+  // height: 100vh;
   background: $gray-color;
+  & > *:not(:last-child){
+    margin-bottom: 5rem;
+  }
 }
 .text-center{
   text-align: center;

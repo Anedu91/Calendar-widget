@@ -8,13 +8,27 @@
   }
   /*=============================HEADING CONFIG==============================*/
   &__header{
+    position: relative;
     padding: 1.25rem 1rem;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     @media (min-width:$sm){
       padding: 1.25rem 2.5rem;
       align-items: center;
       flex-direction: row;
+    }
+    &--line{
+      &::before{
+        content: '';
+        position: absolute;
+        width: 93%;
+        height: 1px;
+        background: $gray-dark-color;
+        bottom: 0;
+        left: 3%;
+
+      }
     }
   }
   &__title{
@@ -24,7 +38,7 @@
       font-size: 2.25rem;
     }
   }
-  &__price{    
+  &__heading{    
     display: flex;
     align-items: center;
     margin-top: .5rem;
@@ -41,8 +55,7 @@
         font-size: 1.2rem;
       }
     }
-    span:nth-child(2){
-      color: $principal-dark-color;
+    span:nth-child(2){      
       font-weight: 700;
       font-size: 1.5rem;
       @media (min-width:$sm){
@@ -54,6 +67,35 @@
       font-size: 1rem;
       transform: translateY(30%);
     }
+    &--title{
+      font-size: 1.8rem;
+      color: $principal-light-color;
+      margin-right: 1rem;
+      font-weight: 500;
+      @media (min-width:$md){
+        margin-right: 3rem;
+      }
+
+    }
+    &--right{
+      margin-left: auto;
+    }
+  }
+  &__header-price{
+    position: relative;
+    &::before{
+      content: '$';
+      display: inline-block;
+      transform: translateY(-40%);
+      font-size: 1rem;
+      color: currentColor;
+    }
+    &.dark{
+      color: $principal-dark-color;
+    }
+    &.light{
+      color: $principal-light-color;
+    }
   }
   /*=============================BODY CONFIG==============================*/
   &__body{
@@ -61,18 +103,36 @@
     @media (min-width:$sm){
       padding: 1.25rem 2.5rem;
     }
+    &--flex{
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
- 
+  &__check{
+    display: flex;
+    color: $principal-light-color;
+    flex: 0 0 100%;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+    &>*:not(:last-child){
+      margin-right: 3rem;
+    }    
+  }
   /*=============================FOOTER CONFIG==============================*/
   &__footer{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    
     background: $principal-color;
     color: $white-color;
-    padding: 1.25rem 1rem;
+    padding: 1.25rem 1rem;    
     @media (min-width:$sm){
       padding: 1rem 2.5rem;
+      align-items: center;
+    justify-content: space-between;
+    }
+    @media (min-width:$md){
+      flex-direction: row;
     }
   }
   &__button{
@@ -87,10 +147,19 @@
     font-weight: 700;
     font-size: 1.1rem;
     border-radius: 15px;
-    cursor: pointer;
+    margin-top: 1rem;
+    cursor: pointer;  
+    
+    @media (min-width: $sm){
+      width: auto;
+    }
+    @media (min-width: $md){
+      margin-top: 0;
+    }
     &:focus{
       outline: none;
     }
+
   }
   &__icon{
     width: 2rem;

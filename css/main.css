@@ -12,11 +12,14 @@ html {
 
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing: inherit;
-  height: 100vh;
   background: #cdcdcd;
+}
+body > *:not(:last-child) {
+  margin-bottom: 5rem;
 }
 
 .text-center {
@@ -42,9 +45,11 @@ body {
   }
 }
 .calendar__header {
+  position: relative;
   padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 @media (min-width: 768px) {
   .calendar__header {
@@ -52,6 +57,15 @@ body {
     align-items: center;
     flex-direction: row;
   }
+}
+.calendar__header--line::before {
+  content: "";
+  position: absolute;
+  width: 93%;
+  height: 1px;
+  background: #6a7883;
+  bottom: 0;
+  left: 3%;
 }
 .calendar__title {
   font-weight: 700;
@@ -62,42 +76,71 @@ body {
     font-size: 2.25rem;
   }
 }
-.calendar__price {
+.calendar__heading {
   display: flex;
   align-items: center;
   margin-top: 0.5rem;
 }
 @media (min-width: 768px) {
-  .calendar__price {
+  .calendar__heading {
     margin-left: 1.5rem;
     margin-top: 0;
   }
 }
-.calendar__price span:nth-child(1) {
+.calendar__heading span:nth-child(1) {
   color: #02a7fc;
   font-size: 1rem;
   transform: translateY(-40%);
   margin-right: 0.5rem;
 }
 @media (min-width: 768px) {
-  .calendar__price span:nth-child(1) {
+  .calendar__heading span:nth-child(1) {
     font-size: 1.2rem;
   }
 }
-.calendar__price span:nth-child(2) {
-  color: #0073ae;
+.calendar__heading span:nth-child(2) {
   font-weight: 700;
   font-size: 1.5rem;
 }
 @media (min-width: 768px) {
-  .calendar__price span:nth-child(2) {
+  .calendar__heading span:nth-child(2) {
     font-size: 2rem;
   }
 }
-.calendar__price span:nth-child(3) {
+.calendar__heading span:nth-child(3) {
   color: #0083c6;
   font-size: 1rem;
   transform: translateY(30%);
+}
+.calendar__heading--title {
+  font-size: 1.8rem;
+  color: #02a7fc;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  .calendar__heading--title {
+    margin-right: 3rem;
+  }
+}
+.calendar__heading--right {
+  margin-left: auto;
+}
+.calendar__header-price {
+  position: relative;
+}
+.calendar__header-price::before {
+  content: "$";
+  display: inline-block;
+  transform: translateY(-40%);
+  font-size: 1rem;
+  color: currentColor;
+}
+.calendar__header-price.dark {
+  color: #0073ae;
+}
+.calendar__header-price.light {
+  color: #02a7fc;
 }
 .calendar__body {
   padding: 1.25rem 1rem;
@@ -107,10 +150,23 @@ body {
     padding: 1.25rem 2.5rem;
   }
 }
+.calendar__body--flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.calendar__check {
+  display: flex;
+  color: #02a7fc;
+  flex: 0 0 100%;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+}
+.calendar__check > *:not(:last-child) {
+  margin-right: 3rem;
+}
 .calendar__footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   background: #0083c6;
   color: #fff;
   padding: 1.25rem 1rem;
@@ -118,6 +174,13 @@ body {
 @media (min-width: 768px) {
   .calendar__footer {
     padding: 1rem 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 992px) {
+  .calendar__footer {
+    flex-direction: row;
   }
 }
 .calendar__button {
@@ -132,7 +195,18 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
   border-radius: 15px;
+  margin-top: 1rem;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .calendar__button {
+    width: auto;
+  }
+}
+@media (min-width: 992px) {
+  .calendar__button {
+    margin-top: 0;
+  }
 }
 .calendar__button:focus {
   outline: none;
@@ -146,16 +220,32 @@ body {
 
 .checking {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   flex: 1;
+  width: 100%;
   /*====================================== DROPDOWN SETTINGS ======================================*/
+}
+@media (min-width: 768px) {
+  .checking {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .checking__container {
   position: relative;
   min-width: 300px;
   min-height: 42px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0.5rem 0;
+}
+@media (min-width: 768px) {
+  .checking__container {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  .checking__container {
+    margin: 0 1rem;
+  }
 }
 .checking__dropdown {
   position: absolute;

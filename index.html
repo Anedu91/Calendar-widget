@@ -10,8 +10,8 @@
   <div class="calendar">
     <div class="calendar__header">
       <h2 class="calendar__title">Availability and booking</h2>
-      <div class="calendar__price">
-        <span>FROM</span> <span>$237</span><span>/night</span>
+      <div class="calendar__heading">
+        <span>FROM</span> <span class="calendar__header-price dark">237</span><span>/night</span>
       </div>
     </div>
     <div class="calendar__body">
@@ -155,7 +155,86 @@
       <div class="checking">
         <p class="checking__text">
           check-in 
+          <span class="checking__date">Fri 23 Jan 2021</span>
+        </p>
+        <div class="checking__container">
+          <div class="checking__dropdown">
+            <div class="checking__selected">
+              <span class="checking__night">3 Nights</span><span class="checking__price-selected">FROM<span class="checking__total">900</span></span> <span class="checking__small">(min stay)</span>
+            </div>
+            <div class="checking__options none">
+              <h3 class="checking__title">Starting <span>Fri 23 Jan 2021</span></h3>
+              <ul class="checking__list">
+                <li class="checking__item checking__item--head">
+                  <span></span>
+                  <span class="checking__cell-title">From total</span>
+                  <span class="checking__cell-title">Per night</span>
+                </li>
+                <li class="checking__item">
+                  <span class="checking__night">3 Nights <span class="checking__small">(min stay)</span></span>
+                  <span class="checking__cell"><span class="checking__total">900</span></span>
+                  <span class="checking__cell"><span class="checking__total">300</span></span>
+                </li>
+                <li class="checking__item">
+                  <span class="checking__night">4 Nights</span>
+                  <span class="checking__cell"><span class="checking__total">1200</span></span>
+                  <span class="checking__cell"><span class="checking__total discount-1">250</span></span>
+                </li>
+                <li class="checking__item">
+                  <span class="checking__night">14 Nights</span>
+                  <span class="checking__cell"><span class="checking__total">1200</span></span>
+                  <span class="checking__cell"><span class="checking__total discount-2">200</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="checking__text">
+          check-out
+          <span class="checking__date">Sun 25 Jan 2021</span>
+        </p>
+      </div>
+      <button class="calendar__button">
+        Choose guests & extras <span> <svg class="calendar__icon"><use xlink:href="sprite.svg#icon-arrow"></use></svg> </span>
+      </button>
+    </div>
+  </div>
+  <div class="calendar">
+    <div class="calendar__header calendar__header--line">
+      <h2 class="calendar__title">Choose guests & extras</h2>
+      <div class="calendar__heading calendar__heading--right">
+        <h4 class="calendar__heading--title">Whole house</h4>
+         <span class="calendar__header-price light">1870.00</span><span>total</span>
+      </div>
+    </div>
+    <div class="calendar__body calendar__body--flex">
+      <div class="calendar__check">
+        <p class="checking__text">
+          check-in 
           <span class="checking__date">Fri 23 Jan</span>
+        </p>
+        <p class="checking__text">
+          check-out
+          <span class="checking__date">Sun 25 Jan 2021</span>
+        </p>
+      </div>
+      <div class="guest">
+        <div class="guest__group">
+          <label for="adults" class="guest__label">Adults</label>
+          <div class="guest__controler">
+            <button class="guest__button">-</button>
+            <button class="guest__button">+</button>
+            <input type="text" class="guest__input" id="adults">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calendar__footer">
+      <div class="checking">
+        <p class="checking__text">
+          check-in 
+          <span class="checking__date">Fri 23 Jan 2021</span>
         </p>
         <div class="checking__container">
           <div class="checking__dropdown">
@@ -200,13 +279,19 @@
     </div>
   </div>
   <script>
-    $dropdownButton = document.querySelector(".checking__dropdown");
+    $dropdownButton = document.querySelector(".checking__selected");
     $checkingOptions = document.querySelector(".checking__options")
 
     $dropdownButton.addEventListener("click", () => {
       $checkingOptions.classList.toggle("none")
 
     })
+
+    function clickHandle() {
+      document.addEventListener("click", () => {
+        
+      })
+    }
   </script>
 </body>
 </html>
