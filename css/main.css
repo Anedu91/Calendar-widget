@@ -139,6 +139,9 @@ body > *:not(:last-child) {
 .calendar__header-price.dark {
   color: #0073ae;
 }
+.calendar__header-price.darker {
+  color: #01537d;
+}
 .calendar__header-price.light {
   color: #02a7fc;
 }
@@ -392,6 +395,57 @@ body > *:not(:last-child) {
 }
 .checking__total.discount-2 {
   color: #d29133;
+}
+
+.detail {
+  width: 100%;
+  margin-top: 1rem;
+}
+.detail__list {
+  list-style: none;
+}
+.detail__item {
+  display: grid;
+  grid-template-columns: 10.375rem repeat(4, 1fr);
+  grid-gap: 1.25rem;
+  color: #3e6e89;
+  padding-bottom: 1rem;
+}
+.detail__item:not(:last-child) {
+  border-bottom: 1px solid #cdcdcd;
+}
+.detail__item:not(:first-child) {
+  padding-top: 1rem;
+}
+.detail__text {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.detail__info {
+  display: block;
+  font-size: 0.8rem;
+  color: #b1c4cf;
+}
+.detail__group {
+  padding: 0 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.detail__label {
+  display: block;
+  font-weight: 600;
+  padding-left: 0.25rem;
+  margin-bottom: 0.15rem;
+}
+.detail__input {
+  border: 1px solid #3e6e89;
+  border-radius: 10px;
+  padding: 0.5rem;
+  background: #d8effb;
+  font-family: inherit;
+}
+.detail__input:focus {
+  outline: none;
 }
 
 @media (min-width: 768px) {

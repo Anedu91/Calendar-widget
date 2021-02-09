@@ -304,10 +304,10 @@
   </div>
   <div class="calendar">
     <div class="calendar__header calendar__header--line">
-      <h2 class="calendar__title">Choose guests & extras</h2>
+      <h2 class="calendar__title">Your details</h2>
       <div class="calendar__heading calendar__heading--right">
         <h4 class="calendar__heading--title">Whole house</h4>
-         <span class="calendar__header-price light">1870.00</span><span>total</span>
+         <span class="calendar__header-price darker">1870.00</span><span>total</span>
       </div>
     </div>
     <div class="calendar__body calendar__body--flex">
@@ -321,87 +321,90 @@
           <span class="checking__date">Sun 25 Jan 2021</span>
         </p>
       </div>
-      <div class="guest">
-        <div class="guest__group">
-          <label for="adults" class="guest__label">Adults</label>
-          <div class="guest__controler">
-            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-minus"></use></svg></button>
-            <span class="guest__total">2</span>
-            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-add"></use></svg></button>
-            <input type="text" class="guest__input" id="adults">
-          </div>
-        </div>
-        <div class="guest__group">
-          <label for="children" class="guest__label">Children <span class="guest__info">Age 2-12</span></label>
-          <div class="guest__controler">
-            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-minus"></use></svg></button>
-            <span class="guest__total">1</span>
-            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-add"></use></svg></button>
-            <input type="text" class="guest__input" id="children">
-          </div>
-        </div>
-        <div class="guest__group">
-          <label for="infants" class="guest__label disabled">Infants <span class="guest__info">Under 2 yrs</span></label>
-          <div class="guest__controler">
-            <button class="guest__button disabled"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-minus"></use></svg></button>
-            <span class="guest__total disabled">0</span>
-            <button class="guest__button"><svg class="guest__icon"><use xlink:href="sprite.svg#icon-add"></use></svg></button>
-            <input type="text" class="guest__input" id="infants">
-          </div>
-        </div>
-        <div class="guest__group">
-          <h6 class="guest__label">Pets</h6>
-            <label for="pets" class="guest__controler guest__controler--label">
-              <input type="checkbox" name="" id="pets" class="guest__input">
-              <span class="guest__checkbox"></span>
-              <span class="guest__checkbox-info">Yes</span>
-            </label>
-        </div>
-        <div class="guest__group">
-          <h6 class="guest__label">Gym pass</h6>
-            <label for="gym" class="guest__controler guest__controler--label">
-              <input type="checkbox" name="" id="gym" class="guest__input">
-              <span class="guest__checkbox"></span>
-              <span class="guest__checkbox-info disabled">No</span>
-            </label>
-        </div>
-      </div>
-      <div class="summary">
-        <ul class="summary__list">
-          <li class="summary__item">
-            <span class="summary__detail"><span class="summary__total">250</span> x 7 nights </span>
-            <span class="summary__total">1750.00</span>
+      <div class="detail">
+        <ul class="detail__list">
+          <li class="detail__item">
+            <p class="detail__text">
+              Primary guest
+              <span class="detail__info">This is who will be sent all information</span>
+            </p>
+            <div class="detail__group">
+              <label for="name" class="detail__label">First name</label>
+              <input type="text" class="detail__input" id="name">
+            </div>
+            <div class="detail__group">
+              <label for="lastname" class="detail__label">Last name</label>
+              <input type="text" class="detail__input" id="lastname">
+            </div>
+            <div class="detail__group">
+              <label for="email" class="detail__label">email</label>
+              <input type="email" class="detail__input" id="email">
+            </div>
+            <div class="detail__group">
+              <label for="phone" class="detail__label">phone</label>
+              <input type="text" class="detail__input" id="phone">
+            </div>
           </li>
-          <li class="summary__item">
-            <span class="summary__detail">Extra guests</span>
-            <span class="summary__total">1750.00</span>
+          <li class="detail__item">
+            <p class="detail__text">
+              Guest 2
+            </p>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="name" placeholder="First name">
+            </div>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="lastname" placeholder="Last name">
+            </div>
+            <div class="detail__group">              
+              <input type="email" class="detail__input" id="email" placeholder="email">
+            </div>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="phone" placeholder="phone">
+            </div>
           </li>
-          <li class="summary__item">
-            <span class="summary__detail">Pet charge</span>
-            <span class="summary__total">1750.00</span>
+          <li class="detail__item">
+            <p class="detail__text">
+              Guest 3
+            </p>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="name" placeholder="First name">
+            </div>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="lastname" placeholder="Last name">
+            </div>
+            <div class="detail__group">              
+              <input type="email" class="detail__input" id="email" placeholder="email">
+            </div>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="phone" placeholder="phone">
+            </div>
           </li>
-          <li class="summary__item">
-            <span class="summary__detail">Cleaning</span>
-            <span class="summary__total">1750.00</span>
-          </li>
-          <li class="summary__item hight-light">
-            <span class="summary__detail">Total</span>
-            <span class="summary__total">1750.00</span>
-          </li>
-          <li class="summary__item">
-            <span class="summary__detail">Deposit</span>
-            <span class="summary__total">1750.00</span>
+          <li class="detail__item">
+            <p class="detail__text">
+              Guest 4
+            </p>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="name" placeholder="First name">
+            </div>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="lastname" placeholder="Last name">
+            </div>
+            <div class="detail__group">              
+              <input type="email" class="detail__input" id="email" placeholder="email">
+            </div>
+            <div class="detail__group">              
+              <input type="text" class="detail__input" id="phone" placeholder="phone">
+            </div>
           </li>
         </ul>
-        <p class="summary__text">Paid today. Remainder paid at check-in</p>
       </div>
     </div>
     <div class="calendar__footer">
       <button class="calendar__button calendar__button--left">
-        Change dates 
+        Change guests & extras 
       </button>
       <button class="calendar__button calendar__button--right">
-        Your Details 
+        Book now 
       </button>
     </div>
   </div>

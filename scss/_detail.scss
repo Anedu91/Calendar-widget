@@ -1,0 +1,51 @@
+.detail{
+  width: 100%;
+  margin-top: 1rem;
+  &__list{
+    list-style: none;
+  }
+  &__item{
+    display: grid;
+    grid-template-columns:10.375rem repeat(4,1fr);
+    grid-gap: 1.25rem;
+    color: $label-color;
+    padding-bottom: 1rem;
+    &:not(:last-child){
+      border-bottom: 1px solid $gray-color;
+    }
+    &:not(:first-child){
+      padding-top: 1rem;
+    }
+  }
+  &__text{
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  &__info{
+    display: block;
+    font-size: .8rem;
+    color: $disabled-color;
+  }
+  &__group{
+    padding: 0 .25rem;
+    display: flex;
+    flex-direction: column;
+
+  }
+  &__label{
+    display: block;
+    font-weight: 600;
+    padding-left: .25rem;
+    margin-bottom: .15rem;
+  }
+  &__input{
+    border: 1px solid $label-color;
+    border-radius: 10px;
+    padding: .5rem;
+    background: $checkbox-color;
+    font-family: inherit;
+    &:focus{
+      outline: none;
+    }
+  }
+}
