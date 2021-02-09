@@ -1,0 +1,41 @@
+.summary{
+  
+  padding-top: 1.275rem;
+  padding-right: 1rem;
+  color: $sumary-color;
+  @media (min-width:$sm){
+    margin-left: auto;
+  }
+  &__list{
+    border-top: 1px solid $sumary-color;
+    list-style: none;
+    min-width: 16.25rem;
+    padding-top: 1rem;
+  }
+  &__item{
+    padding: .35rem .55rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    &.hight-light{
+      color: $principal-darker-color;
+      text-transform: uppercase;
+      background: $checkbox-color;
+      font-weight: 700;
+    }
+  }
+  &__text{
+    padding-left: .55rem;
+    font-size: .65rem;
+    font-weight: 700;
+  }
+  &__total{
+    position: relative;
+    &:before{
+      content: '$';
+      font-size: .8rem;
+      display: inline-block;
+      transform: translateY(-20%);
+    }
+  }
+}

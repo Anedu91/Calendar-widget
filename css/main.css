@@ -160,6 +160,12 @@ body > *:not(:last-child) {
   flex: 0 0 100%;
   justify-content: flex-end;
   font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .calendar__check {
+    margin-bottom: 0;
+  }
 }
 .calendar__check > *:not(:last-child) {
   margin-right: 3rem;
@@ -184,14 +190,13 @@ body > *:not(:last-child) {
   }
 }
 .calendar__button {
-  display: flex;
-  align-items: center;
+  position: relative;
   font-family: inherit;
   text-transform: uppercase;
   color: #01537d;
   background-color: #02a7fc;
   border: 2px solid #fff;
-  padding: 0.5rem 0.75rem;
+  padding: 0.85rem 0.75rem;
   font-weight: 700;
   font-size: 1.1rem;
   border-radius: 15px;
@@ -200,7 +205,7 @@ body > *:not(:last-child) {
 }
 @media (min-width: 768px) {
   .calendar__button {
-    width: auto;
+    min-width: 17rem;
   }
 }
 @media (min-width: 992px) {
@@ -210,6 +215,26 @@ body > *:not(:last-child) {
 }
 .calendar__button:focus {
   outline: none;
+}
+.calendar__button--right:before, .calendar__button--left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../arrow.svg);
+  background-size: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.calendar__button--left::before {
+  transform: translateY(-50%) rotate(180deg);
+  left: 0;
+}
+.calendar__button.left {
+  text-align: left;
 }
 .calendar__icon {
   width: 2rem;
@@ -369,6 +394,11 @@ body > *:not(:last-child) {
   color: #d29133;
 }
 
+@media (min-width: 768px) {
+  .guest {
+    margin-bottom: 0.9rem;
+  }
+}
 .guest__group {
   display: flex;
   align-items: center;
@@ -585,4 +615,47 @@ body > *:not(:last-child) {
 }
 .month--march .first-day {
   grid-column-start: 7;
+}
+
+.summary {
+  padding-top: 1.275rem;
+  padding-right: 1rem;
+  color: #345668;
+}
+@media (min-width: 768px) {
+  .summary {
+    margin-left: auto;
+  }
+}
+.summary__list {
+  border-top: 1px solid #345668;
+  list-style: none;
+  min-width: 16.25rem;
+  padding-top: 1rem;
+}
+.summary__item {
+  padding: 0.35rem 0.55rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+}
+.summary__item.hight-light {
+  color: #01537d;
+  text-transform: uppercase;
+  background: #d8effb;
+  font-weight: 700;
+}
+.summary__text {
+  padding-left: 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+.summary__total {
+  position: relative;
+}
+.summary__total:before {
+  content: "$";
+  font-size: 0.8rem;
+  display: inline-block;
+  transform: translateY(-20%);
 }

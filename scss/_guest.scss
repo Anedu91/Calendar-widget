@@ -1,4 +1,7 @@
 .guest{  
+  @media (min-width:$sm){
+    margin-bottom: .9rem;
+  }
   &__group{
     display: flex;
     align-items: center;

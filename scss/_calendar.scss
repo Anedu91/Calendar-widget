@@ -114,9 +114,14 @@
     flex: 0 0 100%;
     justify-content: flex-end;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
+    @media (min-width:$sm){
+      margin-bottom: 0;
+    } 
     &>*:not(:last-child){
       margin-right: 3rem;
-    }    
+    }   
+    
   }
   /*=============================FOOTER CONFIG==============================*/
   &__footer{
@@ -136,28 +141,51 @@
     }
   }
   &__button{
-    display: flex;
-    align-items: center;
+    position: relative;
     font-family: inherit;
     text-transform: uppercase;
     color: $principal-darker-color;
     background-color: $principal-light-color;
     border: 2px solid $white-color;
-    padding: .5rem .75rem;
+    padding: .85rem .75rem;
     font-weight: 700;
     font-size: 1.1rem;
     border-radius: 15px;
     margin-top: 1rem;
-    cursor: pointer;  
+    cursor: pointer;      
     
     @media (min-width: $sm){
-      width: auto;
+      min-width: 17rem;
     }
     @media (min-width: $md){
       margin-top: 0;
     }
     &:focus{
       outline: none;
+    }
+    &--right, &--left{
+      &:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: .25rem;
+        width: 2rem;
+        height: 2rem;
+        background-image: url(../arrow.svg);
+        background-size: 2rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+    &--left{      
+      &::before{
+        transform: translateY(-50%) rotate(180deg);
+        left: 0;
+      }
+    }
+    &.left{
+      text-align: left;
     }
 
   }
