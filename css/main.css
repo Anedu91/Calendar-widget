@@ -405,11 +405,17 @@ body > *:not(:last-child) {
   list-style: none;
 }
 .detail__item {
+  padding: 0.1rem;
   display: grid;
-  grid-template-columns: 10.375rem repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.25rem;
   color: #3e6e89;
   padding-bottom: 1rem;
+}
+@media (min-width: 1200px) {
+  .detail__item {
+    grid-template-columns: 10.375rem repeat(4, 1fr);
+  }
 }
 .detail__item:not(:last-child) {
   border-bottom: 1px solid #cdcdcd;
