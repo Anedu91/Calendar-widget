@@ -1,178 +1,185 @@
-.calendar{
+.calendar {
   max-width: 95vw;
   width: 100%;
   font-family: $calendar-font;
   background: $white-color;
-  @media (min-width:1280px){
+  @media (min-width: 1280px) {
     max-width: 75rem;
   }
   /*=============================HEADING CONFIG==============================*/
-  &__header{
+  &__header {
     position: relative;
     padding: 1.25rem 1rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    @media (min-width:$sm){
+    @media (min-width: $sm) {
       padding: 1.25rem 2.5rem;
       align-items: center;
       flex-direction: row;
     }
-    &--line{
-      &::before{
-        content: '';
+    &--line {
+      &::before {
+        content: "";
         position: absolute;
         width: 93%;
         height: 1px;
         background: $gray-dark-color;
         bottom: 0;
         left: 3%;
-
       }
     }
   }
-  &__title{
+  &__title {
     font-weight: 700;
     font-size: 1.5rem;
-    @media (min-width:$sm){
+    @media (max-width: $xsm) {
+      font-size: 1.2rem;
+    }
+    @media (min-width: $sm) {
       font-size: 2.25rem;
     }
   }
-  &__heading{    
+  &__heading {
     display: flex;
     align-items: center;
-    margin-top: .5rem;
-    @media (min-width:$sm){
+    margin-top: 0.5rem;
+    @media (min-width: $sm) {
       margin-left: 1.5rem;
       margin-top: 0;
     }
-    span:nth-child(1){
+    span:nth-child(1) {
       color: $principal-light-color;
       font-size: 1rem;
       transform: translateY(-40%);
-      margin-right: .5rem;
-      @media (min-width:$sm){
+      margin-right: 0.5rem;
+      @media (min-width: $sm) {
         font-size: 1.2rem;
       }
     }
-    span:nth-child(2){      
+    span:nth-child(2) {
       font-weight: 700;
       font-size: 1.5rem;
-      @media (min-width:$sm){
+      @media (max-width: $xsm) {
+        font-size: 1.2rem;
+      }
+      @media (min-width: $sm) {
         font-size: 2rem;
       }
     }
-    span:nth-child(3){
+    span:nth-child(3) {
       color: $principal-color;
       font-size: 1rem;
       transform: translateY(30%);
     }
-    &--title{
+    &--title {
       font-size: 1.8rem;
       color: $principal-light-color;
       margin-right: 1rem;
       font-weight: 500;
-      @media (min-width:$md){
+      @media (max-width: $xsm) {
+        font-size: 1.2rem;
+      }
+      @media (min-width: $md) {
         margin-right: 3rem;
       }
-
     }
-    &--right{
+    &--right {
       margin-left: auto;
     }
   }
-  &__header-price{
+  &__header-price {
     position: relative;
-    &::before{
-      content: '$';
+    &::before {
+      content: "$";
       display: inline-block;
       transform: translateY(-40%);
       font-size: 1rem;
       color: currentColor;
     }
-    &.dark{
+    &.dark {
       color: $principal-dark-color;
     }
-    &.darker{
+    &.darker {
       color: $principal-darker-color;
     }
-    &.light{
+    &.light {
       color: $principal-light-color;
     }
   }
   /*=============================BODY CONFIG==============================*/
-  &__body{
+  &__body {
     padding: 1.25rem 1rem;
-    @media (min-width:$sm){
+    @media (min-width: $sm) {
       padding: 1.25rem 2.5rem;
     }
-    &--flex{
+    &--flex {
       display: flex;
       flex-wrap: wrap;
     }
   }
-  &__check{
+  &__check {
     display: flex;
     color: $principal-light-color;
     flex: 0 0 100%;
     justify-content: flex-end;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    @media (min-width:$sm){
+    @media (min-width: $sm) {
       margin-bottom: 0;
-    } 
-    &>*:not(:last-child){
+    }
+    & > *:not(:last-child) {
       margin-right: 3rem;
-    }   
-    
+    }
   }
   /*=============================FOOTER CONFIG==============================*/
-  &__footer{
+  &__footer {
     display: flex;
     flex-direction: column;
-    
+
     background: $principal-color;
     color: $white-color;
-    padding: 1.25rem 1rem;    
-    @media (min-width:$sm){
+    padding: 1.25rem 1rem;
+    @media (min-width: $sm) {
       padding: 1rem 2.5rem;
       align-items: center;
-    justify-content: space-between;
+      justify-content: space-between;
     }
-    @media (min-width:$md){
+    @media (min-width: $md) {
       flex-direction: row;
     }
   }
-  &__button{
+  &__button {
     position: relative;
     font-family: inherit;
-    text-transform: uppercase;
-    color: $principal-darker-color;
-    background-color: $principal-light-color;
+
     border: 2px solid $white-color;
-    padding: .85rem .75rem;
+    padding: 0.85rem 0.75rem;
     font-weight: 700;
     font-size: 1.1rem;
     border-radius: 15px;
     margin-top: 1rem;
-    cursor: pointer;      
-    
-    @media (min-width: $sm){
+    cursor: pointer;
+    @media (max-width: $xsm) {
+      font-size: 0.9rem;
+    }
+    @media (min-width: $sm) {
       min-width: 17rem;
     }
-    @media (min-width: $md){
+    @media (min-width: $md) {
       margin-top: 0;
     }
-    &:focus{
+    &:focus {
       outline: none;
     }
-    &--right, &--left{
-      &:before{
-        content: '';
+    &--right,
+    &--left {
+      &:before {
+        content: "";
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        right: .25rem;
+        right: 0.25rem;
         width: 2rem;
         height: 2rem;
         background-image: url(../arrow.svg);
@@ -181,21 +188,27 @@
         background-repeat: no-repeat;
       }
     }
-    &--left{      
-      &::before{
+    &--right {
+      text-transform: uppercase;
+      color: $principal-darker-color;
+      background-color: $principal-light-color;
+    }
+    &--left {
+      background-color: $principal-color;
+      color: $gray-color;
+      &::before {
         transform: translateY(-50%) rotate(180deg);
         left: 0;
       }
     }
-    &.left{
+    &.left {
       text-align: left;
     }
-
   }
-  &__icon{
+  &__icon {
     width: 2rem;
     height: 2rem;
     fill: $white-color;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 }

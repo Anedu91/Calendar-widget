@@ -1,25 +1,53 @@
-
-.month{
-  // max-width: 21rem;
+.month {
   width: 100%;
-  &:not(:last-child){
-    
-    @media (min-width:$md){
-      border-right: 1px solid $gray-light-color;
-    }
-  }
-  &__container{
+  position: relative;
+
+  &__container {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(1,1fr);
-    @media (min-width: $md){
-      grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(1, 1fr);
+    @media (min-width: $sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $md) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
-  &__header{
+  &__calendar {
+    &:not(:last-child) {
+      @media (min-width: $md) {
+        border-right: 1px solid $gray-light-color;
+      }
+    }
+    &--january {
+      .first-day {
+        grid-column-start: 4;
+      }
+    }
+    &--february {
+      display: none;
+      @media (min-width: $sm) {
+        display: block;
+      }
+      .first-day {
+        grid-column-start: 7;
+      }
+    }
+    &--march {
+      display: none;
+      @media (min-width: $md) {
+        display: block;
+      }
+      .first-day {
+        grid-column-start: 7;
+      }
+    }
+  }
+  &__header {
     position: relative;
     padding: 0 2.25rem 1.625rem;
-    &:before{
-      content: '';
+    &:before {
+      content: "";
       position: absolute;
       width: 95%;
       height: 1px;
@@ -28,36 +56,36 @@
       left: 2.5%;
     }
   }
-  &__title{
+  &__title {
     color: $gray-dark-color;
     font-size: 1.5rem;
     font-weight: 400;
+    text-align: center;
   }
-  &__list{
+  &__list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(7, 1fr);
     row-gap: 1rem;
     margin-top: 1.625rem;
     padding: 0 1.5625rem;
   }
-  &__week{
+  &__week {
     text-align: center;
     color: $gray-dark-color;
   }
-  &__day{
+  &__day {
     position: relative;
     text-align: center;
-    color: $gray-dark-color;    
+    color: $gray-dark-color;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
     overflow: hidden;
-
   }
-  
-  &__button{
+
+  &__button {
     font-family: inherit;
     border: none;
     cursor: pointer;
@@ -65,18 +93,18 @@
     width: 100%;
     height: 100%;
     min-height: 30px;
-    &:focus{
+    &:focus {
       outline: none;
     }
-    &.disabled{
+    &.disabled {
       color: $gray-light-color;
       cursor: auto;
     }
-    &.active{
+    &.active {
       background: $active-color;
       font-weight: 700;
     }
-    &.first-active{
+    &.first-active {
       position: relative;
       font-weight: 700;
       padding: 0;
@@ -85,8 +113,8 @@
       background: $principal-color;
       width: 1.875rem;
       height: 1.875rem;
-      &:before{
-        content: '';
+      &:before {
+        content: "";
         position: absolute;
         top: 0;
         left: 50%;
@@ -96,7 +124,7 @@
         z-index: -1;
       }
     }
-    &.last-active{
+    &.last-active {
       position: relative;
       font-weight: 700;
       padding: 0;
@@ -105,8 +133,8 @@
       background: $principal-color;
       width: 1.875rem;
       height: 1.875rem;
-      &:before{
-        content: '';
+      &:before {
+        content: "";
         position: absolute;
         top: 0;
         right: 50%;
@@ -117,20 +145,25 @@
       }
     }
   }
-
-  &--january{
-    .first-day{
-      grid-column-start: 4;
+  &__nav-button {
+    position: absolute;
+    top: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &--prev {
+      transform: rotate(180deg);
+    }
+    &--next {
+      right: 0;
     }
   }
-  &--february{
-    .first-day{
-      grid-column-start: 7;
-    }
-  }
-  &--march{
-    .first-day{
-      grid-column-start: 7;
-    }
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: $principal-color;
   }
 }
